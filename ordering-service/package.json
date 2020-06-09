@@ -1,0 +1,29 @@
+{
+  "name": "order-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --inspect=9249 server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "express-validation": "^1.0.2",
+    "joi": "^14.3.0",
+    "jsonwebtoken": "^8.3.0",
+    "kue": "^0.11.6",
+    "morgan": "^1.9.1",
+    "mysql2": "^1.6.4",
+    "sequelize": "^4.41.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}

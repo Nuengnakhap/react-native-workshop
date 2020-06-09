@@ -1,0 +1,79 @@
+version: "3"
+
+services:
+  user-api:
+    image: user-api
+    container_name: user-api
+    restart: always
+    environment:
+      - DB_ATTR=ecommerce
+      - DATABASE=ecommerce
+      - HOST=dbs
+      - SECRET=cute cat
+      - REDIS_URL=redis-server
+    ports:
+      - "6000:3000"
+    links:
+        - dbs
+        - redis-server
+
+  product-api:
+    image: product-api
+    container_name: product-api
+    restart: always
+    environment:
+      - DB_ATTR=ecommerce
+      - DATABASE=ecommerce
+      - HOST=dbs
+      - SECRET=cute cat
+      - REDIS_URL=redis-server
+    ports:
+      - "5000:3000"
+    links:
+      - dbs
+      - redis-server
+
+  order-api:
+    image: order-api
+    container_name: order-api
+    restart: always
+    environment:
+      - DB_ATTR=ecommerce
+      - DATABASE=ecommerce
+      - HOST=dbs
+      - SECRET=cute cat
+      - REDIS_URL=redis-server
+    ports:
+      - "4000:3000"
+    links:
+      - dbs
+      - redis-server
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    environment:
+      - PMA_HOST=dbs
+    ports:
+      - "8080:80"
+    links:
+      - dbs
+
+  redis-server:
+    image: "redis"
+    restart: always
+
+  dbs:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: "db"
+      MYSQL_USER: "onez"
+      MYSQL_PASSWORD: "1475369nnNN!!"
+      MYSQL_ROOT_PASSWORD: "1475369nnNN!!"
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./configs/conf.d:/etc/mysql/conf.d
+      - /var/mysql:/var/lib/mysql
