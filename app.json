@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "e-commerce-app",
+    "name": "E Commerce App",
     "slug": "e-commerce-app",
     "platforms": [
       "ios",
@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
-    }
+    },
+    "description": "",
+    "githubUrl": "https://github.com/Nuengnakhap/react-native-workshop/tree/e-comerce-app"
   }
 }

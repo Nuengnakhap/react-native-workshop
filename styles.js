@@ -11,6 +11,7 @@ export const gbStyles = StyleSheet.create({
     alignItems: "center",
     height: "100%",
     padding: 20,
+    backgroundColor: "#fff"
   },
   input: {
     width: "100%",
